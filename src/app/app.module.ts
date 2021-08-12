@@ -16,6 +16,11 @@ import { ExternalApiComponent } from './pages/external-api/external-api.componen
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AuthModule } from '@auth0/auth0-angular';
+import { environment as env } from 'src/environments/environment';
+import { LoginButtonComponent } from './components/login-button/login-button.component';
+import { LoggonButtonComponent } from './components/loggon-button/loggon-button.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,12 +33,17 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     ProfileComponent,
     ExternalApiComponent,
+    LoginButtonComponent,
+    LoggonButtonComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
+    AuthModule.forRoot({
+      ...env.auth,
+    })
   ],
   bootstrap: [AppComponent],
 })

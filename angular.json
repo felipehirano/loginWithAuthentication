@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "auth0-angular-sample"
+    }
+  },
+  "defaultProject": "auth0-angular-sample",
+  "cli": {
+    "analytics": false
+  }
 }

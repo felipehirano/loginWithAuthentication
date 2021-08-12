@@ -3,6 +3,12 @@
     <div class="container">
       <div class="navbar-brand logo"></div>
       <app-main-nav></app-main-nav>
+      <app-login-button
+        *ngIf="(auth.isAuthenticated$ | async) === false"
+      ></app-login-button>
+      <app-loggon-button
+        *ngIf="auth.isAuthenticated$ | async "
+      ></app-loggon-button>
     </div>
   </nav>
 </div>
